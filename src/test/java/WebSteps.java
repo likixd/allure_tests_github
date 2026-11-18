@@ -4,9 +4,8 @@ import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 
-import static TestData.TestData.*;
+import static testdata.TestData.*;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -40,10 +39,5 @@ public class WebSteps {
     public void shouldSeeIssueWithText(String text){
         $(withText(issueSearchText)).should(Condition.exist);
 
-    }
-
-    @Attachment(value = "Screenshot", type ="image/png", fileExtension = "png")
-    public byte[] takeScreenshot(){
-        return ((TakesScreenshot)WebDriverRunner.getWebDriver()).getScreenshotAs(OutputType.BYTES);
     }
 }

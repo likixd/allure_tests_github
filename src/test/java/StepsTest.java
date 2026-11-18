@@ -5,7 +5,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static TestData.TestData.*;
+import static testdata.TestData.*;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.attachment;
@@ -47,6 +47,7 @@ public class StepsTest {
     @DisplayName("Открытие вкладки Issue через аннотации @Step")
     @Owner("Gizatullina Rimma")
     void testAnnotatedStep() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
         WebSteps steps = new WebSteps();
         steps.openMainPage();
         steps.searchFoRepository(repoName);
