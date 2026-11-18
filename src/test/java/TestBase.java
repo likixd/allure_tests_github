@@ -1,17 +1,13 @@
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.WebDriverRunner;
-import io.qameta.allure.Attachment;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import utils.AllureAttachments;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBase {
-    SelenideTest selenideTest = new SelenideTest();
-    StepsTest stepsTest = new StepsTest();
+//    SelenideTest selenideTest = new SelenideTest();
+//    StepsTest stepsTest = new StepsTest();
 
 
     @BeforeAll
@@ -23,7 +19,7 @@ public class TestBase {
 
     @AfterEach
     void closeDriver() {
+        AllureAttachments.takeScreenshot();
         closeWebDriver();
-        new AllureAttachments();
     }
 }

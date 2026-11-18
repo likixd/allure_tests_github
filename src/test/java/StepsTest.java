@@ -5,10 +5,10 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Configuration.baseUrl;
 import static testdata.TestData.*;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
-import static io.qameta.allure.Allure.attachment;
 import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.By.linkText;
 
@@ -54,9 +54,6 @@ public class StepsTest {
         steps.clickOnRepository(repoName);
         steps.openIssueTab();
         steps.shouldSeeIssueWithText(issueSearchText);
-        steps.takeScreenshot();
-
-
     }
 
 ////Для себя

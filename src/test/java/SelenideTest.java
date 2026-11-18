@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Configuration.baseUrl;
 import static testdata.TestData.*;
 import static com.codeborne.selenide.Configuration.browserSize;
 import static com.codeborne.selenide.Selectors.withText;
@@ -16,10 +17,10 @@ import static org.openqa.selenium.By.linkText;
 public class SelenideTest {
 
 
-    @BeforeAll
-    static void beforeAll(){
-        browserSize= "1920x1080";
-    }
+//    @BeforeAll
+//    static void beforeAll(){
+//        browserSize= "1920x1080";
+//    }
 
     @Test
     @DisplayName("Открытие вкладки Issue через Listener Selenide")
@@ -35,10 +36,10 @@ public class SelenideTest {
         $(withText(issueSearchText)).should(Condition.exist);
     }
 
-    @AfterEach
-    void afterAll() {
-        closeWebDriver();
-    }
+//    @AfterEach
+//    void afterAll() {
+//        closeWebDriver();
+//    }
 
 }
 
