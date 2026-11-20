@@ -6,14 +6,11 @@ import utils.AllureAttachments;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBase {
-//    SelenideTest selenideTest = new SelenideTest();
-//    StepsTest stepsTest = new StepsTest();
-    //jbjbjhbhjbhjvhjv
-
 
     @BeforeAll
     static void configurationBrowser() {
         Configuration.browser = "chrome";
+       // Configuration.browserVersion = "157.0.8103.78";
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://github.com";
     }

@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.By.linkText;
 
-public class StepsTest {
+public class StepsTest extends TestBase{
 
 
     @Test
